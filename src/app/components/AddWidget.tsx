@@ -10,6 +10,10 @@ type AddWidgetProps = {
   categoryId: string;
   placeholderId: string;
 };
+type FormValues = {
+  title: string;
+  text: string;
+};
 const AddWidget: React.FC<AddWidgetProps> = ({
   setAddWidget,
   categoryId,
@@ -22,7 +26,7 @@ const AddWidget: React.FC<AddWidgetProps> = ({
   const tabs = ["CSPM", "CWPP", "Image", "Ticket"];
   const [activeTab, setActiveTab] = useState(tabs[0]); // default active tab
 
-  const onSubmit = (data:any) => {
+  const onSubmit = (data: FormValues) => {
     updateWidget(categoryId, placeholderId, data.title, data.text);
     reset();
     setAddWidget(false);
