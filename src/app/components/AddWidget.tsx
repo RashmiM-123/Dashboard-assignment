@@ -19,7 +19,7 @@ const AddWidget: React.FC<AddWidgetProps> = ({
   categoryId,
   placeholderId,
 }) => {
-  const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm<FormValues>();
   const { updateWidget } = useDashboard();
 
   // tabs list
