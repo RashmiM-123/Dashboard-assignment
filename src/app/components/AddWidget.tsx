@@ -4,7 +4,17 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDashboard } from "./context/DashboardContext";
 
-const AddWidget = ({ setAddWidget, categoryId, placeholderId }) => {
+
+type AddWidgetProps = {
+  setAddWidget: React.Dispatch<React.SetStateAction<boolean>>;
+  categoryId: string;
+  placeholderId: string;
+};
+const AddWidget: React.FC<AddWidgetProps> = ({
+  setAddWidget,
+  categoryId,
+  placeholderId,
+}) => {
   const { register, handleSubmit, reset } = useForm();
   const { updateWidget } = useDashboard();
 
@@ -12,7 +22,7 @@ const AddWidget = ({ setAddWidget, categoryId, placeholderId }) => {
   const tabs = ["CSPM", "CWPP", "Image", "Ticket"];
   const [activeTab, setActiveTab] = useState(tabs[0]); // default active tab
 
-  const onSubmit = (data) => {
+  const onSubmit = (data:any) => {
     updateWidget(categoryId, placeholderId, data.title, data.text);
     reset();
     setAddWidget(false);

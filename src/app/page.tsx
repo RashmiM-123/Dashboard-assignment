@@ -1,12 +1,4 @@
-// import Image from "next/image";
 
-// export default function Home() {
-//   return (
-//     <div >
-    
-//     </div>
-//   );
-// }
 import Image from "next/image";
 import { DashBoardContextProvider } from "./components/context/DashboardContext";
 import Dashboard from "./components/Dashboard";
@@ -17,7 +9,7 @@ export default function Home() {
     <DashBoardContextProvider>
     <Dashboard />
 
-    {/* <AddWidget/> */}
+   
   </DashBoardContextProvider>
   );
 }
